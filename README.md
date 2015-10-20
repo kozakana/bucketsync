@@ -27,7 +27,7 @@ bucketsync [--help | --env | --dry-run | --no-ignore | --ignore=VALUE] ACCESSKEY
   --ignore=VALUE set your ignore file
 </pre>
 
-## '.env' file
+## '.env' file [option]
 
 put your working folder.
 
