@@ -150,7 +150,13 @@ else
   end
 end
 
-command = "s3cmd sync #{dry_run} --guess-mime-type --delete-removed --add-header=Cache-Control:no-cache #{upload_dir} -P --follow-symlinks --config #{config_filename} #{ignore} s3://#{bucket_name}"
+if bucket_name.include?('.')
+  check_certificate = '--no-check-certificate'
+else
+  check_certificate = ''
+end
+
+command = "s3cmd sync #{dry_run} #{check_certificate} --guess-mime-type --delete-removed --add-header=Cache-Control:no-cache #{upload_dir} -P --follow-symlinks --config #{config_filename} #{ignore} s3://#{bucket_name}"
 
 system(command)
 File.unlink config_filename, ignore_filename
