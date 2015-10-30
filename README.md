@@ -1,5 +1,20 @@
 # bucketsync
+
 Sync with s3bucket easily.
+
+## Dependence
+
+s3cmd
+
+<pre>
+#example
+
+brew install s3cmd
+</pre>
+
+### s3cmd
+
+recommend higher than 1.5
 
 ## Usage
 
