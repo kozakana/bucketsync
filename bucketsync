@@ -49,8 +49,7 @@ def read_env env_file
         if elements[elem]
           value = rows.last.try(:strip)
           next unless value
-          value.gsub!('"', '').gsub!('\'', '')
-          elements[elem] = value
+          elements[elem] = value.gsub('"', '').gsub('\'', '')
         end
       end
     end
