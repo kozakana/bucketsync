@@ -33,7 +33,7 @@ bucketsync [--help | --env | --dry-run | --no-ignore | --ignore=VALUE] ACCESSKEY
 ## Options
 <pre>
   -h, --help     show this help message and exit
-  -e, --env      input access key and secret key from '.env' file
+  -e, --env      input access key, secret key, syncdir and bucket name from '.env' file
   --dry-run      Only show what should be uploaded or downloaded but
                  don't actually do it. May still perform S3 requests to
                  get bucket listings and other information though (only
@@ -50,11 +50,19 @@ put your working folder.
 S3_ACCESS_KEY = 'AK1234556'
 S3_SECRET_KEY = 'DFEWAefwj381012'
 </pre>
+OR
+<pre>
+S3_ACCESS_KEY = 'AK1234556'
+S3_SECRET_KEY = 'DFEWAefwj381012'
+DEPLOY_DIR = './public/'
+S3_BUCKET_NAME = 'bucket_name'
+</pre>
 
 ## Examples
 
 <pre>
   bucketsync AK1234556 DFEWAefwj381012 ./public/ sample-bucket
   bucketsync -e ./public/ sample-bucket
+  bucketsync -e
   bucketsync --dry-run AK1234556 DFEWAefwj381012 ./public/ sample-bucket
 </pre>
